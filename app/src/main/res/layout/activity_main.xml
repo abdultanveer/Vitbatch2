@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="36dp"
@@ -31,10 +31,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
+<!--
+    dp = density independent pixel
+-->
     <Button
         android:id="@+id/button"
         android:textColor="@android:color/black"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="41dp"
         android:layout_marginTop="36dp"
@@ -45,11 +48,24 @@
     <Button
         android:id="@+id/button2"
         android:textColor="@color/mycolor"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/my_btn_width"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="38dp"
         android:text="cancel"
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+<!--
+sp = scale independent pixels
+-->
+    <TextView
+        android:id="@+id/textView"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="53dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
