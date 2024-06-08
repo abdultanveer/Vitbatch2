@@ -10,6 +10,8 @@ public class Employee {
 
 
     public Employee(String name, int age, String address) {
+        //    val count: Int = 2
+        int count = 2;
         this.name = name;
         this.age = age;
         this.address = address;
