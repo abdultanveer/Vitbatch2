@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         //context == history
 
         var hIntent = Intent(this,HomeActivity::class.java)
+        hIntent.putExtra("nkey","abdul-android")
         startActivity(hIntent)
     }
 
