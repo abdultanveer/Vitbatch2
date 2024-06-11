@@ -9,11 +9,7 @@ public class DemoLamdas {
 
         //life after lamdas
         IMessage iMessage = () -> {
-            System.out.println("sending message from lamda");
-            System.out.println("sending message from lamda");
-            System.out.println("sending message from lamda");
-
-        };
+            System.out.println("sending message from lamda");};
         iMessage.sendMessage();
     }
 }

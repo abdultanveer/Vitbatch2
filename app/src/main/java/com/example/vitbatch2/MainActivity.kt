@@ -19,7 +19,12 @@ class MainActivity : AppCompatActivity() {
       //  var dialIntent:Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:987654398765"))
         /*var webIntent:Intent = Intent(Intent.ACTION_VIEW,Uri.parse("http://www.yahoo.com"))
         startActivity(webIntent)*/
-        createAlarm("vit",19,32) //vit, 19, 32 are my arguments
+        //createAlarm("vit",19,32) //vit, 19, 32 are my arguments
+
+        //context == history
+
+        var hIntent = Intent(this,HomeActivity::class.java)
+        startActivity(hIntent)
     }
 
     fun createAlarm(message: String, hour: Int, minutes: Int) {
