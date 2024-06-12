@@ -22,35 +22,30 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.e(TAG,"activity started -- initialize  data")
-
     }
 
     //chick has woken up -- come back to the foreground
     override fun onResume() {
         super.onResume()
         Log.w(TAG,"activity resumed --restore state of the app")
-
     }
 
     //chick has slept  --is partially visible -- background
     override fun onPause() {
         super.onPause()
         Log.d(TAG,"activity paused --store the app state")
-
     }
 
     //activity hibernated
     override fun onStop() {
         super.onStop()
         Log.v(TAG,"activity stopped")
-
     }
 
     //all the resources are purged
     override fun onDestroy() {
         super.onDestroy()
         Log.i(TAG,"activity destroyed")
-
     }
 
 
@@ -61,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         /*var webIntent:Intent = Intent(Intent.ACTION_VIEW,Uri.parse("http://www.yahoo.com"))
         startActivity(webIntent)*/
         //createAlarm("vit",19,32) //vit, 19, 32 are my arguments
-
+        add(10,20)
         //context == history
         //explicigt intent = HomeActivity reference name
         var hIntent = Intent(this,HomeActivity::class.java)
@@ -69,6 +64,27 @@ class MainActivity : AppCompatActivity() {
         throw NullPointerException("homeactivity crash demo")
 
         startActivity(hIntent)
+    }
+
+    private fun add(i: Int, i1: Int): Int {
+        var c = 5 *20;
+        var d = c+i;
+        mul(5,4)
+        return i + i1
+
+    }
+
+    private fun mul(i: Int, i1: Int) {
+        div(9,3)
+
+    }
+
+    private fun div(i: Int, i1: Int) {
+        subtract(10,5)
+    }
+
+    private fun subtract(i: Int, i1: Int) {
+            i1-i
     }
 
     fun createAlarm(message: String, hour: Int, minutes: Int) {
