@@ -69,6 +69,9 @@ class MainActivity : AppCompatActivity() {
     private fun add(i: Int, i1: Int): Int {
         var c = 5 *20;
         var d = c+i;
+        repeat(3){
+            c+=10
+        }
         mul(5,4)
         return i + i1
 
@@ -76,7 +79,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun mul(i: Int, i1: Int) {
         div(9,3)
-
     }
 
     private fun div(i: Int, i1: Int) {
