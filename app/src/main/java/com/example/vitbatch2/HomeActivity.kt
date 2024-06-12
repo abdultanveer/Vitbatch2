@@ -27,4 +27,8 @@ class HomeActivity : AppCompatActivity() {
          homeTextView.setText(data)
 
     }
+
+    override fun onStart() {
+        super.onStart()
+    }
 }
