@@ -1,6 +1,7 @@
 package com.example.vitbatch2.javaexs;
 
 public class Calculator {
+    int someValue;
 
     public int add(int a, int b){
         return a+b;
