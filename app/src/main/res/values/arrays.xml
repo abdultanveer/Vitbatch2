@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countries">
+        <item>India</item>
+        <item>sri lanka</item>
+        <item>Bangladesh</item>
+        <item>USA</item>
+        <item>UK</item>
+        <item>china</item>
+        <item>afghanistan</item>
+        <item>iran</item>
+
+    </string-array>
+
+    <string-array name="languages">
+        <item>hindi</item>
+        <item>english</item>
+        <item>urdu</item>
+        <item>kannada</item>
+        <item>tammil</item>
+        <item>telgu</item>
+
+    </string-array>
+</resources>
