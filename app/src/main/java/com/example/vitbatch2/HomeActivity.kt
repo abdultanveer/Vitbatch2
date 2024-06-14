@@ -10,18 +10,23 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.RecyclerView
 
 class HomeActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
      //lateinit var brake:Int?
     var TAG = HomeActivity::class.java.simpleName   //"HomeActivity"
 
+    var data = arrayOf("india","english","android","computers")
+
     lateinit var mySpinner: Spinner
+    lateinit var recyclerview:RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
         mySpinner = findViewById(R.id.spinner)
         mySpinner.onItemSelectedListener = this
+        recyclerview = findViewById(R.id.recyclerview)
        // brake
       /*  ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
