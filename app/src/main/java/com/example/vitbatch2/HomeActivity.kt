@@ -5,11 +5,9 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Spinner
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class HomeActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -27,6 +25,9 @@ class HomeActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         mySpinner = findViewById(R.id.spinner)
         mySpinner.onItemSelectedListener = this
         recyclerview = findViewById(R.id.recyclerview)
+        recyclerview.layoutManager = LinearLayoutManager(this)
+        var dataAdapter = DataAdaper(data)
+        recyclerview.adapter = dataAdapter
        // brake
       /*  ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
