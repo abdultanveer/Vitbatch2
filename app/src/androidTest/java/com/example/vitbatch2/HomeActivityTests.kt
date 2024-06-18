@@ -27,11 +27,11 @@ class HomeActivityTests {
         //select the etui
         onView(withId(R.id.etUi))
         //type intto etui -- androidworkshops@gmail.com
-            .perform(typeText("¸"), closeSoftKeyboard());
+            .perform(typeText("androidworkshops@gmail.com"), closeSoftKeyboard());
         //click the button btnui
         onView(withId(R.id.btnUi)).perform(click());
         //assert that the tvui has anndroidworkshops@gmail.com
         onView(withId(R.id.tvUi))
-            .check(matches(withText("androidworkshops@gmail.com")));
+            .check(matches(withText("androidworkshops@gmail.co")));
     }
 }
