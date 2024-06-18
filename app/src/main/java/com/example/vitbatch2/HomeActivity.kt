@@ -2,11 +2,14 @@ package com.example.vitbatch2
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
      //lateinit var brake:Int?
@@ -30,5 +33,13 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+    }
+
+    fun getJson(view: View) {
+        getMarsPhotos()
+    }
+
+    private fun getMarsPhotos() {
+        GlobalScope.launch {}
     }
 }
