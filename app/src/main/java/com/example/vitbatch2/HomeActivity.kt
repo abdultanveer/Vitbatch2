@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.vitbatch2.network.MarsApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -40,6 +41,10 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun getMarsPhotos() {
-        GlobalScope.launch {}
+        GlobalScope.launch {
+            val listResult = MarsApi.retrofitService.getPhotos()
+            Log.i("HomeActivity",listResult)
+
+        }
     }
 }
