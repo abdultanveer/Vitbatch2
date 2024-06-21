@@ -8,7 +8,8 @@ android {
     namespace = "com.example.vitbatch2"
     compileSdk = 34
     buildFeatures{
-        viewBinding = true
+       // viewBinding = true
+        dataBinding = true
     }
 
     defaultConfig {

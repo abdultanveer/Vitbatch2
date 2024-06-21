@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,6 +27,8 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
+    var marsPhotoKotlin = MarsPhoto("999","moonimage.com")
+
     //lateinit var brake:Int?
    // lateinit var recyclerview:RecyclerView
     lateinit var listMarsPhotos:List<MarsPhoto>
@@ -33,11 +36,11 @@ class HomeActivity : AppCompatActivity() {
    // lateinit var imageView: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        //setContentView(R.layout.activity_home)
-       binding = ActivityHomeBinding.inflate(layoutInflater)
-       val view = binding.root
-       setContentView(view)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
+       binding.marsphotoxml = marsPhotoKotlin
+
+       /* var tvHome:TextView = findViewById(R.id.tvHome)
+        tvHome.setText(marsPhoto.imgSrc)*/
 
        // imageView = findViewById(R.id.imageView)
        // recyclerview = findViewById(R.id.recyclerView)
