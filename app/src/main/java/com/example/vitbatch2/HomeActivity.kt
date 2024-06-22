@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.TextView
 
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 
 import com.example.vitbatch2.database.Item
 import com.example.vitbatch2.database.ItemDao
@@ -18,12 +19,16 @@ import kotlinx.coroutines.launch
 class HomeActivity : AppCompatActivity() {
     lateinit var dao: ItemDao
     lateinit var tvHome:TextView
-
+   // var count = 0
+    lateinit var viewModel: HomeViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        // enableEdgeToEdge()
          setContentView(R.layout.activity_home)
         tvHome = findViewById(R.id.tvHome)
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+
+        tvHome.setText(""+viewModel.count)
         var  database = ItemRoomDatabase.getDatabase(this)
         dao = database.itemDao()
 
@@ -44,5 +49,12 @@ class HomeActivity : AppCompatActivity() {
             val item = dao.getItem(777).first()
             tvHome.setText(item.itemName)
         }
+    }
+
+    fun incrementCount(view: View) {
+        viewModel.incrementCount()
+       // count++
+        tvHome.setText(""+viewModel.count)
+                //count)
     }
 }
