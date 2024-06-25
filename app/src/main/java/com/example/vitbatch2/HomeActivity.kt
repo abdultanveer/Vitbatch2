@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
-    lateinit var dao: ItemDao
+    lateinit var itemDao: ItemDao
     lateinit var tvHome:TextView
    // var count = 0
     lateinit var viewModel: HomeViewModel
@@ -32,7 +32,7 @@ class HomeActivity : AppCompatActivity() {
 
        // tvHome.setText(""+viewModel.count)
         var  database = ItemRoomDatabase.getDatabase(this)
-        dao = database.itemDao()
+        itemDao = database.itemDao()
 
 
     }
@@ -42,14 +42,14 @@ class HomeActivity : AppCompatActivity() {
     fun insertDb(view: View) {
         GlobalScope.launch {
             val item = Item(777,"fruits",111.0,22)
-            dao.insert(item)
+            itemDao.insert(item)
 
         }
     }
 
     fun findItemDb(view: View) {
         GlobalScope.launch(Dispatchers.Main) {
-            val item = dao.getItem(777).first()
+            val item = itemDao.getItem(777).first()
             tvHome.setText(item.itemName)
         }
     }
