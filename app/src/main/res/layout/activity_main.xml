@@ -61,7 +61,7 @@ sp = scale independent pixels
 -->
     <TextView
         android:id="@+id/textView"
-        android:textSize="30sp"
+       style="@style/myfontstyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
