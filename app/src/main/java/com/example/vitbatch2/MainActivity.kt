@@ -10,6 +10,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock
+import android.telephony.SmsManager
 import android.util.Log
 import android.view.View
 import androidx.core.app.NotificationCompat
@@ -114,5 +115,15 @@ class MainActivity : AppCompatActivity() {
                 getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
+    }
+
+    fun sendSms(view: View) {
+        val smsManager: SmsManager = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            this.getSystemService(SmsManager::class.java)
+        } else {
+            SmsManager.getDefault()
+        }
+        smsManager.sendTextMessage("5556",null,"happy day",null,null)
+
     }
 }
